@@ -1,7 +1,12 @@
 # TimeSeries Prediction Model Benchmark
 
-A local, verifiable benchmark of zero-shot time-series foundation models, and the website that shows its results
-(**benchmark.cometrisse.com**).
+### 👉 See the results at **[benchmark.cometrisse.com](https://benchmark.cometrisse.com)**
+
+The website lets you explore every model's accuracy, its size/speed trade-offs and the calibration of its uncertainty
+ranges. It also has an explorer for all 117 forecasts and the GIFT-Eval / fev-bench leaderboards.
+
+This repository is the local, verifiable benchmark behind that site: the scripts that run the models, every raw
+forecast next to the true value, and the site's source.
 
 Currently tested: Timestral-209M and Timestral-5M (Mistral AI), TimeH2O-v1 and TimeH2O-v1-tiny (H2O.ai), and a
 seasonal-naive baseline. The task is forecasting ETTh1 oil temperature (`OT`, hourly, univariate).
@@ -61,7 +66,7 @@ Create a new resource from this Git repository and set:
 
 - Build Pack: **Dockerfile**
 - Port: **80**
-- Domain: `https://benchmark.cometrisse.com`
+- Domain: `https://benchmark.cometrisse.com` (live)
 
 Point the domain's DNS A record at the Coolify server. The site is fully static: results are computed locally and
 committed in `site/data.json`, so a redeploy only copies files.
