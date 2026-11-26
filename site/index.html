@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Zero-shot benchmark of time-series foundation models: accuracy, calibration, size and speed, on a local test you can verify." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Forecastalytics — time-series foundation model benchmark</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <a class="brand" href="#"><strong><span>forecast</span>alytics</strong></a>
+        <nav class="view-tabs" aria-label="Chart views" id="tabs"></nav>
+        <div class="header-actions">
+          <button class="mobile-only mobile-filter-toggle" id="open-sidebar" aria-controls="sidebar">
+            <span class="filter-label">Models</span>
+          </button>
+          <button class="icon-button" id="theme-toggle" aria-label="Toggle light / dark theme" title="Toggle theme">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="body-layout">
+        <main>
+          <div class="chart-feed" id="feed"><div class="pop-loading">Loading results…</div></div>
+          <footer>
+            <span id="footer-run"></span>
+            <span class="footer-links">
+              <a href="data.json" download>data.json</a>
+              <a href="https://github.com/come-collab/TimeSeries-Prediction-Model-Benchmark">Source &amp; raw predictions</a>
+              <a href="#methodology">Methodology</a>
+            </span>
+          </footer>
+        </main>
+
+        <aside class="sidebar" id="sidebar" aria-label="Models">
+          <div class="side-heading">
+            <h2>Models <span id="model-count"></span></h2>
+            <button class="mobile-only sheet-done" id="close-sidebar">Done</button>
+          </div>
+          <label class="search">
+            <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.5"/></svg>
+            <input id="search" type="search" placeholder="Search models" autocomplete="off" />
+            <kbd>/</kbd>
+          </label>
+          <div class="effort-filter">
+            <h3>Lab</h3>
+            <div id="org-filter"></div>
+          </div>
+          <div>
+            <div class="section-head"><h3>Tested locally</h3><button id="select-all">All</button></div>
+            <div id="model-list"></div>
+          </div>
+          <div class="browse-options">
+            <p class="side-note" id="side-note"></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <div class="chart-tooltip" id="tooltip" role="status" hidden></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

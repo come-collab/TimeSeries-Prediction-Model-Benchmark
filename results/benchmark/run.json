@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-26",
+  "dataset": "ETTh1",
+  "target": "OT",
+  "horizon": 96,
+  "stride": 24,
+  "windows": 117,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce GTX 1070 Ti",
+  "test_split": [
+    11520,
+    14400
+  ],
+  "train_end": 8640,
+  "quantiles": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "models": {
+    "Timestral-209M": {
+      "repo": "mistralai/Timestral-209M",
+      "org": "Mistral AI",
+      "params": 209000000.0,
+      "license": "Modified MIT (weights), Apache-2.0 (code)",
+      "revision": "9874d252ab0aae16f7f7c999f98f98d6ad7d8365"
+    },
+    "Timestral-5M": {
+      "repo": "mistralai/Timestral-5M",
+      "org": "Mistral AI",
+      "params": 5200000.0,
+      "license": "Modified MIT (weights), Apache-2.0 (code)",
+      "revision": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f"
+    },
+    "TimeH2O-v1": {
+      "repo": "h2oai/timeh2o-v1",
+      "org": "H2O.ai",
+      "params": 108000000.0,
+      "license": "H2O Model Non-Commercial Licence v1.0",
+      "revision": "1310be782553943a4c520d2810a98ce8f56b2709"
+    },
+    "TimeH2O-v1-tiny": {
+      "repo": "h2oai/timeh2o-v1-tiny",
+      "org": "H2O.ai",
+      "params": 5800000.0,
+      "license": "H2O Model Non-Commercial Licence v1.0",
+      "revision": "33e4aa27a3d8c971419c2c4a0cdab9c0a10a687e"
+    },
+    "Seasonal naive": {
+      "repo": null,
+      "org": "Baseline",
+      "params": 0,
+      "license": "\u2014",
+      "revision": null
+    }
+  }
+}

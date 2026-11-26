@@ -1,0 +1,9 @@
+timestral @ git+https://github.com/mistralai/timestral.git
+h2ofm>=0.43
+fev>=0.11
+torch>=2.4
+numpy
+pandas
+scipy
+matplotlib
+huggingface_hub

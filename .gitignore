@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Third-party checkouts and downloaded data (recreated by scripts/setup.sh)
+external/
+data/
+
+# Never commit credentials or model weights (TimeH2O weights may not be redistributed)
+.env
+*.safetensors
+*.ckpt
+*.bin
+
+.DS_Store
