@@ -21,7 +21,6 @@ seasonal-naive baseline. The task is forecasting ETTh1 oil temperature (`OT`, ho
 | `leaderboardComparison.py` | Prints the GIFT-Eval / fev-bench comparison of the tested models in the terminal |
 | `mistralTimeseriesTest.py` | The first basic test: Timestral-209M on 10 windows, with plot → `results/timestral_basic/` |
 | `site/` | Static website (plain HTML/CSS/JS, no build step) |
-| `Dockerfile`, `nginx.conf` | Container that serves `site/` (used by Coolify) |
 
 ## Run it locally
 
@@ -59,17 +58,6 @@ register it in `MODELS`, rerun the three commands above, and commit.
 | TimeH2O-v1-tiny | 1.533 | 0.049 | 0.663 | 0.246 | 86.0% |
 | Timestral-5M | 1.571 | 0.052 | 0.680 | 0.249 | 82.0% |
 | Seasonal naive | 1.933 | 0.071 | 0.836 | 0.389 | – |
-
-## Deploy (Coolify)
-
-Create a new resource from this Git repository and set:
-
-- Build Pack: **Dockerfile**
-- Port: **80**
-- Domain: `https://benchmark.cometrisse.com` (live)
-
-Point the domain's DNS A record at the Coolify server. The site is fully static: results are computed locally and
-committed in `site/data.json`, so a redeploy only copies files.
 
 ## Licences
 
